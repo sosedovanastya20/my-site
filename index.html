@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animal Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      padding-top: 60px;
+    }
+    header {
+      background-color: #363e2e;
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .search-form input {
+      padding: 5px 8px;
+      border-radius: 4px;
+      border: none;
+      margin-right: 5px;
+    }
+    .search-form button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #646c66;
+      color: white;
+      cursor: pointer;
+    }
+    .search-form button:hover {
+      background-color: #7ce178;
+    }
+    .intro {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .intro-text {
+      flex: 1 1 300px;
+    }
+    .intro img {
+      max-width: 300px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Animal Home</div>
+  <nav>
+    <ul>
+      <li><a href="#take-dog">Взять собаку</a></li>
+      <li><a href="#take-cat">Взять кошку</a></li>
+      <li><a href="#about">О нас</a></li>
+      <li><a href="#donate">Пожертвовать</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+  </nav>
+  <form class="search-form" action="/search" method="get" role="search" aria-label="Поиск животных">
+    <input type="text" name="query" placeholder="Найти животное" aria-label="Поле поиска животных" />
+    <button type="submit">Найти</button>
+  </form>
+</header>
+
+<section class="intro container">
+  <div class="intro-text">
+    <h1>Добро пожаловать в ANIMALHOME</h1>
+    <p>
+      Наши бродяги ищут ночлег. Мы занимаемся не только содержанием и поиском нового дома для брошенных животных, 
+      но и реализуем системные проекты для решения проблемы бездомных животных. Они направлены на профилактику бездомности, 
+      на повышение уровня культуры обращения с животными и ответственного отношения. Нам очень нужна ваша помощь в их реализации.
+    </p>
+  </div>
+  <img src="https://www.bethowen.ru/upload/iblock/492/49205375228a257f449969475e13b5fd.jpg" alt="Животные" />
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Наши питомцы</h2>
+    <div id="animalCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#animalCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Слайд 1"></button>
+        <button type="button" data-bs-target="#animalCarousel" data-bs-slide-to="1" aria-label="Слайд 2"></button>
+        <button type="button" data-bs-target="#animalCarousel" data-bs-slide-to="2" aria-label="Слайд 3"></button>
+      </div>
+      <div class="carousel-inner rounded shadow-sm">
+  <div class="carousel-item active">
+    <img src="https://media.istockphoto.com/id/540392584/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BE%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA%D0%B0%D1%8F-%D1%81%D0%BE%D0%B1%D0%B0%D0%BA%D0%B0-%D1%89%D0%B5%D0%BD%D0%BE%D0%BA.jpg?s=612x612&w=0&k=20&c=1gT1UhmMZBDcGhJhY8LGMVjwktZNf0qSPQYBI1B3Kiw=" class="d-block w-100" alt="Пес Бобик" />
+    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+      <h5>Бобик</h5>
+      <p>Веселый и дружелюбный пес, любит играть и гулять.</p>
+      <a href="#take-dog" class="btn btn-success" aria-label="Взять Бобика">Подробнее</a>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <img src="https://spbcult.ru/upload/medialibrary/6e0/kngw6ldntm8sm1ii87kmn9fwjjcmfayd.jpg" class="d-block w-100" alt="Кошка Мурка" />
+    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+      <h5>Мурка</h5>
+      <p>Спокойная и ласковая кошка, любит внимание.</p>
+      <a href="#take-cat" class="btn btn-success" aria-label="Взять Мурку">Подробнее</a>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <img src="https://everydog-fund.ru/wp-content/uploads/2024/10/Darsie-23.jpg" class="d-block w-100" alt="Пес Рекс" />
+    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+      <h5>Рекс</h5>
+      <p>Активный и умный пес, отлично подходит для семьи.</p>
+      <a href="#take-dog" class="btn btn-success" aria-label="Взять Рекса">Подробнее</a>
+    </div>
+
+    
+  </div>
+</div>
+        </div>
+        <section class="container my-5">
+  <h2 class="mb-4">Наши питомцы</h2>
+  <div class="row g-4">
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100">
+        <img src="https://media.istockphoto.com/id/540392584/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BE%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA%D0%B0%D1%8F-%D1%81%D0%BE%D0%B1%D0%B0%D0%BA%D0%B0-%D1%89%D0%B5%D0%BD%D0%BE%D0%BA.jpg?s=612x612&w=0&k=20&c=1gT1UhmMZBDcGhJhY8LGMVjwktZNf0qSPQYBI1B3Kiw=" class="card-img-top" alt="Бобик">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title"><br>Бобик</h5>
+          <p class="card-text mb-4">Возраст: 2 года</p>
+          <button class="btn btn-primary mt-auto" type="button">Взять</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100">
+        <img src="https://spbcult.ru/upload/medialibrary/6e0/kngw6ldntm8sm1ii87kmn9fwjjcmfayd.jpg" class="card-img-top" alt="Мурка">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Мурка</h5>
+          <p class="card-text mb-4">Возраст: 1 год</p>
+          <button class="btn btn-primary mt-auto" type="button" >Взять</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100">
+        <img src="https://everydog-fund.ru/wp-content/uploads/2024/10/Darsie-23.jpg" class="card-img-top" alt="Рекс">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Рекс</h5>
+          <p class="card-text mb-4">Возраст: 3 года</p>
+          <button class="btn btn-primary mt-auto" type="button">Взять</button>
+        </div>
+      </div>
+    </div><div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100">
+        <img src="https://spbcult.ru/upload/medialibrary/6e0/kngw6ldntm8sm1ii87kmn9fwjjcmfayd.jpg" class="card-img-top" alt="Мурка">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Мурка</h5>
+          <p class="card-text mb-4">Возраст: 1 год</p>
+          <button class="btn btn-primary mt-auto" type="button">Взять</button>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#animalCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Назад</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#animalCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Вперед</span>
+      </button>
+    </div>
+  </div>
+</section>
+<section class="container my-5">
+  <h2 class="mb-4">Связаться с приютом</h2>
+  <form id="contactForm" novalidate>
+    <div class="mb-3">
+      <label for="name" class="form-label">Ваше имя</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Введите ваше имя" required>
+      <div class="invalid-feedback">
+        Пожалуйста, введите ваше имя.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Электронная почта</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="example@mail.com" required>
+      <div class="invalid-feedback">
+        Пожалуйста, введите корректный email.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="subject" class="form-label">Тема обращения</label>
+      <input type="text" class="form-control" id="subject" name="subject" placeholder="Тема вашего сообщения" required>
+      <div class="invalid-feedback">
+        Пожалуйста, укажите тему.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Сообщение</label>
+      <textarea class="form-control" id="message" name="message" rows="5" placeholder="Ваше сообщение" required></textarea>
+      <div class="invalid-feedback">
+        Пожалуйста, введите сообщение.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+  </form>
+</section>
+<footer class="bg-dark text-light py-4 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5>Приют для животных</h5>
+        <p>Мы заботимся о каждом питомце и ищем им любящие семьи.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>Часы работы</h5>
+        <ul class="list-unstyled">
+          <li>Понедельник — Пятница: 09:00 — 18:00</li>
+          <li>Суббота: 10:00 — 16:00</li>
+          <li>Воскресенье: выходной</li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>Адрес</h5>
+        <address>
+          г. Самара, ул. Заботливая, д. 10<br>
+          Телефон: +7 (495) 123-45-67<br>
+          Email: animallhome@priyut.ru
+        </address>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <small>© 2025 Приют для животных.</small>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
